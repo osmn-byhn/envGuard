@@ -15,13 +15,13 @@ A type-safe environment variable validation and management library for Node.js. 
 ## Installation
 
 ```bash
-npm install envguard
+npm i @osmn-byhn/envguard
 ```
 
 ## Quick Start
 
 ```typescript
-import { loadEnv } from 'envguard';
+import { loadEnv } from '@osmn-byhn/envguard';
 
 const schema = {
   PORT: "number",
@@ -41,8 +41,8 @@ console.log(env.DEBUG); // true (boolean)
 ### Basic Usage
 
 ```typescript
-import { loadEnv } from 'envguard';
-import { EnvSchema } from 'envguard';
+import { loadEnv } from '@osmn-byhn/envguard';
+import { EnvSchema } from '@osmn-byhn/envguard';
 
 const schema: EnvSchema = {
   PORT: "number",
@@ -447,8 +447,8 @@ const env = loadEnv(schema, {
 ## Complete Example
 
 ```typescript
-import { loadEnv } from 'envguard';
-import { EnvSchema } from 'envguard';
+import { loadEnv } from '@osmn-byhn/envguard';
+import { EnvSchema } from '@osmn-byhn/envguard';
 
 const schema: EnvSchema = {
   // Required variables
@@ -500,7 +500,7 @@ console.log(`Environment: ${env.NODE_ENV}`);
 EnvGuard is written in TypeScript and provides full type definitions:
 
 ```typescript
-import { loadEnv, EnvSchema, ParsedEnv } from 'envguard';
+import { loadEnv, EnvSchema, ParsedEnv } from '@osmn-byhn/envguard';
 
 const schema: EnvSchema = {
   PORT: "number",

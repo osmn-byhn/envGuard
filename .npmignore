@@ -1,0 +1,12 @@
+src/
+example.ts
+tsconfig.json
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+.vscode/
+.idea/
+*.tsbuildinfo

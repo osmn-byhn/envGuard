@@ -1,0 +1,59 @@
+{
+  "name": "envguard",
+  "version": "0.1.0",
+  "description": "Type-safe environment variable validation and management for Node.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "env",
+    "environment",
+    "variables",
+    "validation",
+    "schema",
+    "typescript",
+    "dotenv",
+    "config",
+    "envguard"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/index.ts --watch",
+    "lint": "eslint src --ext .ts",
+    "example": "tsx example.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.5.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.2.0",
+    "tsx": "^4.7.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
+

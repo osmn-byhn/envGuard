@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "description": "Type-safe environment variable validation and management for Node.js",
   "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
+      "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     }
   },
@@ -35,8 +35,8 @@
     "url": "https://github.com/osmn-byhn/envGuard"
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts",
-    "dev": "tsup src/index.ts --watch",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "lint": "eslint src --ext .ts",
     "example": "tsx example.ts",
     "prepublishOnly": "npm run build"

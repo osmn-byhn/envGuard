@@ -1,5 +1,5 @@
 {
-  "name": "envguard",
+  "name": "@osmn-byhn/envguard",
   "version": "0.1.0",
   "description": "Type-safe environment variable validation and management for Node.js",
   "main": "dist/index.cjs",
@@ -32,7 +32,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/osmn-byhn/envGuard"
   },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
@@ -56,4 +56,3 @@
     "node": ">=16.0.0"
   }
 }
-

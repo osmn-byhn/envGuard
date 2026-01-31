@@ -1,6 +1,7 @@
 {
   "name": "@osmn-byhn/envguard",
   "version": "0.1.1",
+  "homepage": "https://envguard.osmanbeyhan.com/",
   "description": "Type-safe environment variable validation and management for Node.js",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",

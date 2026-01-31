@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+    integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <title>EnvGuard</title>
+  <link rel="shortcut icon" href="https://i.hizliresim.com/278ij38.png"
+    type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css"
+    rel="stylesheet">
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    };
+  </script>
+  <style>
+    body {
+      font-family: "Afacad", serif;
+    }
+  </style>
+
+  <script>
+    if (localStorage.getItem("color-theme") === "dark" || (!("color-theme" in
+          localStorage) && window.matchMedia("(prefers-color-scheme: dark)")
+        .matches)) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
+</head>
+
+<body class="bg-white text-black dark:bg-gray-900 dark:text-white">
+  <div id="app" class="lg:flex lg:gap-4">
+    <div id="sidebar" class="hidden lg:block w-[95%] lg:w-1/5 mx-auto lg:ml-12 lg:mr-12 bg-white dark:bg-black rounded-md shadow-xl p-5 mt-[12vh] max-h-[80vh] 
+      lg:sticky top-0 overflow-y-auto">
+      <div class="flex flex-wrap gap-3 mt-12">
+        <div class="relative">
+          <div class="absolute mt-1 rounded-md w-48">
+            <a id="-envguard-" href="#-envguard-" class="block p-2 font-bold">
+              EnvGuard
+            </a><a id="-features-" href="#-features-"
+              class="block p-2 font-bold">
+              Features
+            </a><a id="-installation-" href="#-installation-"
+              class="block p-2 font-bold">
+              Installation
+            </a><a id="-quick-start-" href="#-quick-start-"
+              class="block p-2 font-bold">
+              Quick Start
+            </a><a id="-documentation-" href="#-documentation-"
+              class="block p-2 font-bold">
+              Documentation
+            </a><a id="-basic-usage-" href="#-basic-usage-"
+              class="block p-2 font-bold">
+              Basic Usage
+            </a><a id="-type-system-" href="#-type-system-"
+              class="block p-2 font-bold">
+              Type System
+            </a><a id="-1-string-type-" href="#-1-string-type-"
+              class="block p-2 font-bold">
+              1. String Type
+            </a><a id="-2-number-type-" href="#-2-number-type-"
+              class="block p-2 font-bold">
+              2. Number Type
+            </a><a id="-3-boolean-type-" href="#-3-boolean-type-"
+              class="block p-2 font-bold">
+              3. Boolean Type
+            </a><a id="-4-url-type-" href="#-4-url-type-"
+              class="block p-2 font-bold">
+              4. URL Type
+            </a><a id="-5-email-type-" href="#-5-email-type-"
+              class="block p-2 font-bold">
+              5. Email Type
+            </a><a id="-6-enum-type-" href="#-6-enum-type-"
+              class="block p-2 font-bold">
+              6. Enum Type
+            </a><a id="-7-json-type-" href="#-7-json-type-"
+              class="block p-2 font-bold">
+              7. JSON Type
+            </a><a id="-8-array-type-" href="#-8-array-type-"
+              class="block p-2 font-bold">
+              8. Array Type
+            </a><a id="-9-date-type-" href="#-9-date-type-"
+              class="block p-2 font-bold">
+              9. Date Type
+            </a><a id="-10-custom-type-" href="#-10-custom-type-"
+              class="block p-2 font-bold">
+              10. Custom Type
+            </a><a id="-options-" href="#-options-" class="block p-2 font-bold">
+              Options
+            </a><a id="-options-reference-" href="#-options-reference-"
+              class="block p-2 font-bold">
+              Options Reference
+            </a><a id="-error-handling-" href="#-error-handling-"
+              class="block p-2 font-bold">
+              Error Handling
+            </a><a id="-security-features-" href="#-security-features-"
+              class="block p-2 font-bold">
+              Security Features
+            </a><a id="-generating-envexample-" href="#-generating-envexample-"
+              class="block p-2 font-bold">
+              Generating .env.example
+            </a><a id="-strict-mode-" href="#-strict-mode-"
+              class="block p-2 font-bold">
+              Strict Mode
+            </a><a id="-complete-example-" href="#-complete-example-"
+              class="block p-2 font-bold">
+              Complete Example
+            </a><a id="-typescript-support-" href="#-typescript-support-"
+              class="block p-2 font-bold">
+              TypeScript Support
+            </a><a id="-best-practices-" href="#-best-practices-"
+              class="block p-2 font-bold">
+              Best Practices
+            </a><a id="-contributing-" href="#-contributing-"
+              class="block p-2 font-bold">
+              Contributing
+            </a><a id="-license-" href="#-license-" class="block p-2 font-bold">
+              License
+            </a><a id="-changelog-" href="#-changelog-"
+              class="block p-2 font-bold">
+              Changelog
+            </a><a id="-010-" href="#-010-" class="block p-2 font-bold">
+              0.1.0
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content"
+      class="w-[95%] lg:w-4/5 mx-auto bg-white dark:bg-black rounded-md shadow-xl lg:mr-8 p-5 mt-[12vh]">
+      <h1 id="envguard"
+        class="text-3xl font-bold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#envguard">EnvGuard</a>
+      </h1>
+
+      A type-safe environment variable validation and management library for
+      Node.js. EnvGuard helps you validate, parse, and manage environment
+      variables with a simple schema-based approach.
+
+      <h2 id="features"
+        class="text-2xl font-bold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#features">Features</a>
+      </h2>
+      <ul class="list-disc pl-5">
+        <li>✅ <b class="font-bold">Type-safe validation</b> - Validate
+          environment variables with TypeScript support</li>
+        <li>🔒 <b class="font-bold">Automatic type conversion</b> - Numbers,
+          booleans, dates, JSON, arrays, and more</li>
+        <li>🛡️ <b class="font-bold">Strict validation</b> - Catch missing or
+          invalid variables at startup</li>
+        <li>📝 <b class="font-bold">Schema-based</b> - Define your environment
+          structure with a simple schema</li>
+        <li>🔐 <b class="font-bold">Security</b> - Automatic masking of
+          sensitive values (SECRET, TOKEN)</li>
+        <li>📋 <b class="font-bold">Example generation</b> - Auto-generate <code
+            class="bg-gray-200 px-1 rounded">.env.example</code> files</li>
+        <li>🎯 <b class="font-bold">Multiple types</b> - Support for strings,
+          numbers, booleans, URLs, emails, enums, JSON, arrays, dates, and
+          custom patterns</li>
+      </ul>
+
+      <h2 id="installation"
+        class="text-2xl font-bold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#installation">Installation</a>
+      </h2>
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-bash">npm install envguard
+</code></pre>
+      </div>
+
+      <h2 id="quick-start"
+        class="text-2xl font-bold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#quick-start">Quick Start</a>
+      </h2>
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">import { loadEnv } from 'envguard';
+
+const schema = {
+  PORT: "number",
+  DATABASE_URL: "string",
+  DEBUG: "boolean",
+};
+
+const env = loadEnv(schema);
+
+console.log(env.PORT); // 3000 (number)
+console.log(env.DATABASE_URL); // "postgresql://..." (string)
+console.log(env.DEBUG); // true (boolean)
+</code></pre>
+      </div>
+
+      <h2 id="documentation"
+        class="text-2xl font-bold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#documentation">Documentation</a>
+      </h2>
+
+      <h3 id="basic-usage"
+        class="text-xl font-semibold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#basic-usage">Basic Usage</a>
+      </h3>
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">import { loadEnv } from 'envguard';
+import { EnvSchema } from 'envguard';
+
+const schema: EnvSchema = {
+  PORT: "number",
+  DATABASE_URL: "string",
+};
+
+const env = loadEnv(schema);
+</code></pre>
+      </div>
+
+      <h3 id="type-system"
+        class="text-xl font-semibold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#type-system">Type System</a>
+      </h3>
+
+      EnvGuard supports multiple types for environment variable validation:
+
+      <h4 id="1-string-type"
+        class="text-lg font-normal my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#1-string-type">1. String Type</a>
+      </h4>
+
+      Basic string validation. Use <code
+        class="bg-gray-200 px-1 rounded">"string"</code> for required strings,
+      or <code class="bg-gray-200 px-1 rounded">"string?"</code> for optional
+      strings.
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const schema = {
+  API_KEY: "string",      // Required
+  OPTIONAL_KEY: "string?", // Optional
+};
+
+// .env
+// API_KEY=my-secret-key
+// OPTIONAL_KEY=optional-value (or omit this line)
+</code></pre>
+      </div>
+
+      <b class="font-bold">Example:</b>
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const env = loadEnv(schema);
+console.log(env.API_KEY); // "my-secret-key" (string)
+console.log(env.OPTIONAL_KEY); // "optional-value" or undefined
+</code></pre>
+      </div>
+
+      <h4 id="2-number-type"
+        class="text-lg font-normal my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#2-number-type">2. Number Type</a>
+      </h4>
+
+      Validates and converts string values to numbers.
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const schema = {
+  PORT: "number",
+  TIMEOUT: "number?",
+};
+
+// .env
+// PORT=3000
+// TIMEOUT=5000
+</code></pre>
+      </div>
+
+      <b class="font-bold">Example:</b>
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const env = loadEnv(schema);
+console.log(env.PORT); // 3000 (number, not string)
+console.log(typeof env.PORT); // "number"
+</code></pre>
+      </div>
+
+      <b class="font-bold">Error cases:</b>
+      <ul class="list-disc pl-5">
+        <li><code class="bg-gray-200 px-1 rounded">PORT=abc</code> → Throws
+          error: <code class="bg-gray-200 px-1 rounded">[EnvGuard] PORT must be
+            a number</code></li>
+      </ul>
+
+      <h4 id="3-boolean-type"
+        class="text-lg font-normal my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#3-boolean-type">3. Boolean Type</a>
+      </h4>
+
+      Converts string values to boolean. Accepts <code
+        class="bg-gray-200 px-1 rounded">"true"</code>, <code
+        class="bg-gray-200 px-1 rounded">"1"</code> (case-insensitive) as <code
+        class="bg-gray-200 px-1 rounded">true</code>, everything else as <code
+        class="bg-gray-200 px-1 rounded">false</code>.
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const schema = {
+  DEBUG: "boolean",
+  ENABLE_FEATURE: "boolean?",
+};
+
+// .env
+// DEBUG=true
+// ENABLE_FEATURE=1
+</code></pre>
+      </div>
+
+      <b class="font-bold">Example:</b>
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const env = loadEnv(schema);
+console.log(env.DEBUG); // true (boolean)
+console.log(env.ENABLE_FEATURE); // true (boolean)
+</code></pre>
+      </div>
+
+      <b class="font-bold">Accepted values:</b>
+      <ul class="list-disc pl-5">
+        <li><code class="bg-gray-200 px-1 rounded">true</code>, <code
+            class="bg-gray-200 px-1 rounded">True</code>, <code
+            class="bg-gray-200 px-1 rounded">TRUE</code>, <code
+            class="bg-gray-200 px-1 rounded">1</code> → <code
+            class="bg-gray-200 px-1 rounded">true</code></li>
+        <li><code class="bg-gray-200 px-1 rounded">false</code>, <code
+            class="bg-gray-200 px-1 rounded">False</code>, <code
+            class="bg-gray-200 px-1 rounded">FALSE</code>, <code
+            class="bg-gray-200 px-1 rounded">0</code>, <code
+            class="bg-gray-200 px-1 rounded">""</code>, or any other value →
+          <code class="bg-gray-200 px-1 rounded">false</code></li>
+      </ul>
+
+      <h4 id="4-url-type"
+        class="text-lg font-normal my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#4-url-type">4. URL Type</a>
+      </h4>
+
+      Validates that the value is a valid URL.
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const schema = {
+  API_BASE_URL: "url",
+  WEBHOOK_URL: "url?",
+};
+
+// .env
+// API_BASE_URL=https://api.example.com
+// WEBHOOK_URL=https://webhook.example.com/callback
+</code></pre>
+      </div>
+
+      <b class="font-bold">Example:</b>
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const env = loadEnv(schema);
+console.log(env.API_BASE_URL); // "https://api.example.com"
+</code></pre>
+      </div>
+
+      <b class="font-bold">Error cases:</b>
+      <ul class="list-disc pl-5">
+        <li><code class="bg-gray-200 px-1 rounded">API_BASE_URL=not-a-url</code>
+          → Throws error: <code class="bg-gray-200 px-1 rounded">[EnvGuard]
+            API_BASE_URL must be a valid URL</code></li>
+      </ul>
+
+      <h4 id="5-email-type"
+        class="text-lg font-normal my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#5-email-type">5. Email Type</a>
+      </h4>
+
+      Validates that the value is a valid email address.
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const schema = {
+  ADMIN_EMAIL: "email",
+  SUPPORT_EMAIL: "email?",
+};
+
+// .env
+// ADMIN_EMAIL=admin@example.com
+// SUPPORT_EMAIL=support@example.com
+</code></pre>
+      </div>
+
+      <b class="font-bold">Example:</b>
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const env = loadEnv(schema);
+console.log(env.ADMIN_EMAIL); // "admin@example.com"
+</code></pre>
+      </div>
+
+      <b class="font-bold">Error cases:</b>
+      <ul class="list-disc pl-5">
+        <li><code
+            class="bg-gray-200 px-1 rounded">ADMIN_EMAIL=invalid-email</code> →
+          Throws error: <code class="bg-gray-200 px-1 rounded">[EnvGuard]
+            ADMIN_EMAIL must be a valid email</code></li>
+      </ul>
+
+      <h4 id="6-enum-type"
+        class="text-lg font-normal my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#6-enum-type">6. Enum Type</a>
+      </h4>
+
+      Restricts values to a specific set of allowed strings.
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const schema = {
+  NODE_ENV: ["development", "production", "test"],
+  LOG_LEVEL: ["debug", "info", "warn", "error"],
+};
+
+// .env
+// NODE_ENV=production
+// LOG_LEVEL=info
+</code></pre>
+      </div>
+
+      <b class="font-bold">Example:</b>
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const env = loadEnv(schema);
+console.log(env.NODE_ENV); // "production"
+console.log(env.LOG_LEVEL); // "info"
+</code></pre>
+      </div>
+
+      <b class="font-bold">Error cases:</b>
+      <ul class="list-disc pl-5">
+        <li><code class="bg-gray-200 px-1 rounded">NODE_ENV=staging</code> →
+          Throws error: <code class="bg-gray-200 px-1 rounded">[EnvGuard]
+            Invalid value for NODE_ENV: staging, allowed: development,
+            production, test</code></li>
+      </ul>
+
+      <h4 id="7-json-type"
+        class="text-lg font-normal my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#7-json-type">7. JSON Type</a>
+      </h4>
+
+      Parses and validates JSON strings.
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const schema = {
+  CONFIG: "json",
+  FEATURE_FLAGS: "json?",
+};
+
+// .env
+// CONFIG={"timeout":5000,"retries":3}
+// FEATURE_FLAGS={"feature1":true,"feature2":false}
+</code></pre>
+      </div>
+
+      <b class="font-bold">Example:</b>
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const env = loadEnv(schema);
+console.log(env.CONFIG); // { timeout: 5000, retries: 3 } (object)
+console.log(env.FEATURE_FLAGS); // { feature1: true, feature2: false } (object)
+</code></pre>
+      </div>
+
+      <b class="font-bold">Error cases:</b>
+      <ul class="list-disc pl-5">
+        <li><code class="bg-gray-200 px-1 rounded">CONFIG={invalid json</code> →
+          Throws error: <code class="bg-gray-200 px-1 rounded">[EnvGuard] CONFIG
+            must be a valid JSON</code></li>
+      </ul>
+
+      <h4 id="8-array-type"
+        class="text-lg font-normal my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#8-array-type">8. Array Type</a>
+      </h4>
+
+      Parses comma-separated values into an array.
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const schema = {
+  ALLOWED_ORIGINS: "array",
+  FEATURES: "array?",
+};
+
+// .env
+// ALLOWED_ORIGINS=http://localhost:3000,https://example.com,https://app.example.com
+// FEATURES=feature1,feature2,feature3
+</code></pre>
+      </div>
+
+      <b class="font-bold">Example:</b>
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const env = loadEnv(schema);
+console.log(env.ALLOWED_ORIGINS); // ["http://localhost:3000", "https://example.com", "https://app.example.com"]
+console.log(env.FEATURES); // ["feature1", "feature2", "feature3"]
+</code></pre>
+      </div>
+
+      <b class="font-bold">Note:</b> Values are automatically trimmed of
+      whitespace.
+
+      <h4 id="9-date-type"
+        class="text-lg font-normal my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#9-date-type">9. Date Type</a>
+      </h4>
+
+      Parses and validates date strings.
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const schema = {
+  START_DATE: "date",
+  END_DATE: "date?",
+};
+
+// .env
+// START_DATE=2024-01-01
+// END_DATE=2024-12-31
+</code></pre>
+      </div>
+
+      <b class="font-bold">Example:</b>
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const env = loadEnv(schema);
+console.log(env.START_DATE); // Date object: 2024-01-01T00:00:00.000Z
+console.log(env.START_DATE instanceof Date); // true
+</code></pre>
+      </div>
+
+      <b class="font-bold">Error cases:</b>
+      <ul class="list-disc pl-5">
+        <li><code
+            class="bg-gray-200 px-1 rounded">START_DATE=invalid-date</code> →
+          Throws error: <code class="bg-gray-200 px-1 rounded">[EnvGuard]
+            START_DATE must be a valid date</code></li>
+      </ul>
+
+      <h4 id="10-custom-type"
+        class="text-lg font-normal my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#10-custom-type">10. Custom Type</a>
+      </h4>
+
+      Advanced validation with custom patterns, default values, and error
+      handling.
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const schema = {
+  SECRET_TOKEN: {
+    type: "string",
+    pattern: /^[A-Za-z0-9]{32,}$/,
+    description: "32 characters or longer alphanumeric token",
+    error: (err) =&gt; {
+      console.error("Custom error handler:", err.message);
+      process.exit(1);
+    },
+    required: true,
+  },
+  LOG_LEVEL: {
+    type: ["debug", "info", "warn", "error"],
+    default: "info",
+    description: "Log level",
+    error: (err) =&gt; console.error(err),
+  },
+  API_VERSION: {
+    type: "string",
+    pattern: /^v\d+\.\d+\.\d+$/,
+    default: "v1.0.0",
+    description: "API version in semver format",
+  },
+};
+
+// .env
+// SECRET_TOKEN=MySuperSecretToken12345678901234567890
+// LOG_LEVEL=debug (or omit for default "info")
+// API_VERSION=v2.1.0
+</code></pre>
+      </div>
+
+      <b class="font-bold">Custom Type Options:</b>
+      <ul class="list-disc pl-5">
+        <li><code class="bg-gray-200 px-1 rounded">type</code>: The base type
+          (string, number, boolean, url, email, json, array, date, or enum
+          array)</li>
+        <li><code class="bg-gray-200 px-1 rounded">pattern</code>: Regular
+          expression for pattern matching</li>
+        <li><code class="bg-gray-200 px-1 rounded">default</code>: Default value
+          if variable is missing or empty</li>
+        <li><code class="bg-gray-200 px-1 rounded">description</code>:
+          Human-readable description</li>
+        <li><code class="bg-gray-200 px-1 rounded">error</code>: Custom error
+          handler function</li>
+        <li><code class="bg-gray-200 px-1 rounded">required</code>: Whether the
+          variable is required (default: <code
+            class="bg-gray-200 px-1 rounded">true</code>)</li>
+      </ul>
+
+      <b class="font-bold">Example:</b>
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const env = loadEnv(schema);
+console.log(env.SECRET_TOKEN); // "MySuperSecretToken12345678901234567890"
+console.log(env.LOG_LEVEL); // "debug" or "info" (default)
+console.log(env.API_VERSION); // "v2.1.0"
+</code></pre>
+      </div>
+
+      <b class="font-bold">Error cases:</b>
+      <ul class="list-disc pl-5">
+        <li><code class="bg-gray-200 px-1 rounded">SECRET_TOKEN=short</code> →
+          Throws error (doesn't match pattern)</li>
+        <li>Pattern validation happens before type conversion</li>
+      </ul>
+
+      <h3 id="options"
+        class="text-xl font-semibold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#options">Options</a>
+      </h3>
+
+      The <code class="bg-gray-200 px-1 rounded">loadEnv</code> function accepts
+      an optional second parameter with configuration options:
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const env = loadEnv(schema, {
+  path: ".env",           // Path to .env file (default: ".env")
+  strict: true,          // Warn about unknown variables (default: false)
+  example: true,        // Generate .env.example file (default: false)
+  error: (err) =&gt; {     // Custom error handler
+    console.error(err.message);
+    process.exit(1);
+  },
+  debug: true,          // Enable debug mode (default: false)
+});
+</code></pre>
+      </div>
+
+      <h4 id="options-reference"
+        class="text-lg font-normal my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#options-reference">Options Reference</a>
+      </h4>
+
+
+      <div class="overflow-x-auto my-4">
+        <table class="table-auto w-full border border-gray-700">
+          <thead>
+            <tr>
+              <th class="p-2 border border-gray-700 bg-gray-800 text-white">
+                Option</th>
+              <th class="p-2 border border-gray-700 bg-gray-800 text-white">Type
+              </th>
+              <th class="p-2 border border-gray-700 bg-gray-800 text-white">
+                Default</th>
+              <th class="p-2 border border-gray-700 bg-gray-800 text-white">
+                Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-gray-100 bg-gray-100 dark:bg-gray-900">
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                <code class="bg-gray-200 px-1 rounded">path</code></td>
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                <code class="bg-gray-200 px-1 rounded">string</code></td>
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                <code class="bg-gray-200 px-1 rounded">".env"</code></td>
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                Path to the environment file</td>
+            </tr>
+            <tr class="bg-gray-200 dark:bg-gray-800">
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                <code class="bg-gray-200 px-1 rounded">strict</code></td>
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                <code class="bg-gray-200 px-1 rounded">boolean</code></td>
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                <code class="bg-gray-200 px-1 rounded">false</code></td>
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                If <code class="bg-gray-200 px-1 rounded">true</code>, warns
+                about variables in <code
+                  class="bg-gray-200 px-1 rounded">.env</code> that are not in
+                the schema</td>
+            </tr>
+            <tr class="bg-gray-100 bg-gray-100 dark:bg-gray-900">
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                <code class="bg-gray-200 px-1 rounded">example</code></td>
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                <code class="bg-gray-200 px-1 rounded">boolean</code></td>
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                <code class="bg-gray-200 px-1 rounded">false</code></td>
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                If <code class="bg-gray-200 px-1 rounded">true</code>, generates
+                a <code class="bg-gray-200 px-1 rounded">.env.example</code>
+                file with all schema keys</td>
+            </tr>
+            <tr class="bg-gray-200 dark:bg-gray-800">
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                <code class="bg-gray-200 px-1 rounded">error</code></td>
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                <code class="bg-gray-200 px-1 rounded">(error: Error) =&gt;
+                  void</code></td>
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                <code class="bg-gray-200 px-1 rounded">undefined</code></td>
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                Custom error handler function</td>
+            </tr>
+            <tr class="bg-gray-100 bg-gray-100 dark:bg-gray-900">
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                <code class="bg-gray-200 px-1 rounded">debug</code></td>
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                <code class="bg-gray-200 px-1 rounded">boolean</code></td>
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                <code class="bg-gray-200 px-1 rounded">false</code></td>
+              <td
+                class="p-2 border border-gray-700 text-center text-black dark:text-white">
+                Enable debug logging</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 id="error-handling"
+        class="text-xl font-semibold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#error-handling">Error Handling</a>
+      </h3>
+
+      EnvGuard throws errors when validation fails. You can handle them with
+      try-catch or use the <code class="bg-gray-200 px-1 rounded">error</code>
+      callback:
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">// Method 1: Try-catch
+try {
+  const env = loadEnv(schema);
+} catch (error) {
+  console.error("Validation failed:", error.message);
+  process.exit(1);
+}
+
+// Method 2: Error callback
+const env = loadEnv(schema, {
+  error: (err) =&gt; {
+    console.error("Validation failed:", err.message);
+    process.exit(1);
+  },
+});
+</code></pre>
+      </div>
+
+      <b class="font-bold">Common Errors:</b>
+      <ul class="list-disc pl-5">
+        <li><code class="bg-gray-200 px-1 rounded">[EnvGuard] Missing env
+            variable: PORT</code> - Required variable is missing</li>
+        <li><code class="bg-gray-200 px-1 rounded">[EnvGuard] PORT must be a
+            number</code> - Type validation failed</li>
+        <li><code class="bg-gray-200 px-1 rounded">[EnvGuard] Invalid value for
+            NODE_ENV: staging, allowed: development, production, test</code> -
+          Enum validation failed</li>
+        <li><code class="bg-gray-200 px-1 rounded">[EnvGuard] Failed to parse
+            .env file at /path/to/.env: ...</code> - File parsing error</li>
+      </ul>
+
+      <h3 id="security-features"
+        class="text-xl font-semibold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#security-features">Security Features</a>
+      </h3>
+
+      EnvGuard automatically masks sensitive values when accessed through the
+      returned object:
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const schema = {
+  SECRET_TOKEN: "string",
+  API_KEY: "string",
+  DATABASE_PASSWORD: "string",
+};
+
+const env = loadEnv(schema);
+
+// .env
+// SECRET_TOKEN=my-secret
+// API_KEY=my-key
+// DATABASE_PASSWORD=my-password
+
+console.log(env.SECRET_TOKEN); // "[HIDDEN]"
+console.log(env.API_KEY); // "[HIDDEN]"
+console.log(env.DATABASE_PASSWORD); // "[HIDDEN]"
+</code></pre>
+      </div>
+
+      <b class="font-bold">Note:</b> Variables containing "SECRET" or "TOKEN" in
+      their names are automatically masked.
+
+      <h3 id="generating-envexample"
+        class="text-xl font-semibold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#generating-envexample">Generating .env.example</a>
+      </h3>
+
+      You can automatically generate a <code
+        class="bg-gray-200 px-1 rounded">.env.example</code> file:
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const env = loadEnv(schema, {
+  example: true,
+});
+</code></pre>
+      </div>
+
+      This creates a <code class="bg-gray-200 px-1 rounded">.env.example</code>
+      file with all schema keys (without values):
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-env">DATABASE_URL=
+PORT=
+DEBUG=
+API_BASE_URL=
+</code></pre>
+      </div>
+
+      <h3 id="strict-mode"
+        class="text-xl font-semibold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#strict-mode">Strict Mode</a>
+      </h3>
+
+      Enable strict mode to get warnings about unknown variables in your <code
+        class="bg-gray-200 px-1 rounded">.env</code> file:
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">const env = loadEnv(schema, {
+  strict: true,
+});
+
+// If .env contains variables not in schema:
+// [EnvGuard] Unknown env variables: UNKNOWN_VAR, ANOTHER_UNKNOWN
+</code></pre>
+      </div>
+
+      <h2 id="complete-example"
+        class="text-2xl font-bold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#complete-example">Complete Example</a>
+      </h2>
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">import { loadEnv } from 'envguard';
+import { EnvSchema } from 'envguard';
+
+const schema: EnvSchema = {
+  // Required variables
+  DATABASE_URL: "string",
+  PORT: "number",
+  DEBUG: "boolean",
+  API_BASE_URL: "url",
+  ADMIN_EMAIL: "email",
+  NODE_ENV: ["development", "production", "test"],
+  
+  // Optional variables
+  API_KEY: "string?",
+  TIMEOUT: "number?",
+  
+  // Complex types
+  CONFIG: "json",
+  ALLOWED_ORIGINS: "array",
+  START_DATE: "date",
+  
+  // Custom validation
+  SECRET_TOKEN: {
+    type: "string",
+    pattern: /^[A-Za-z0-9]{32,}$/,
+    required: true,
+  },
+  LOG_LEVEL: {
+    type: ["debug", "info", "warn", "error"],
+    default: "info",
+  },
+};
+
+const env = loadEnv(schema, {
+  strict: true,
+  example: true,
+  error: (err) =&gt; {
+    console.error("❌ Environment validation failed:", err.message);
+    process.exit(1);
+  },
+});
+
+// Use validated environment variables
+console.log(<code class="bg-gray-200 px-1 rounded">Server starting on port ${env.PORT}</code>);
+console.log(<code class="bg-gray-200 px-1 rounded">Database: ${env.DATABASE_URL}</code>);
+console.log(<code class="bg-gray-200 px-1 rounded">Environment: ${env.NODE_ENV}</code>);
+</code></pre>
+      </div>
+
+      <h2 id="typescript-support"
+        class="text-2xl font-bold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#typescript-support">TypeScript Support</a>
+      </h2>
+
+      EnvGuard is written in TypeScript and provides full type definitions:
+
+      <div class="code-container relative rounded-lg p-4 overflow-auto mt-2">
+        <button
+          class="copy-btn absolute top-3 right-3 bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-1 text-sm rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition m-[25px] z-[10]"><i
+            id="copyBtn" class="bi bi-clipboard"></i></button>
+        <pre class="line-numbers"><code class="language-typescript">import { loadEnv, EnvSchema, ParsedEnv } from 'envguard';
+
+const schema: EnvSchema = {
+  PORT: "number",
+  DATABASE_URL: "string",
+};
+
+const env: ParsedEnv = loadEnv(schema);
+// env is fully typed!
+</code></pre>
+      </div>
+
+      <h2 id="best-practices"
+        class="text-2xl font-bold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#best-practices">Best Practices</a>
+      </h2>
+
+      <ul class="list-disc pl-5">
+        <li class="ml-0"><b class="font-bold">Define all environment variables
+            in your schema</b> - This serves as documentation</li>
+        <li class="ml-0"><b class="font-bold">Use strict mode in production</b>
+          - Catch unknown variables early</li>
+        <li class="ml-0"><b class="font-bold">Generate .env.example</b> - Help
+          other developers know what variables are needed</li>
+        <li class="ml-0"><b class="font-bold">Use custom types for complex
+            validation</b> - Patterns, defaults, and custom error handling</li>
+        <li class="ml-0"><b class="font-bold">Handle errors gracefully</b> - Use
+          error callbacks or try-catch blocks</li>
+        <li class="ml-0"><b class="font-bold">Use optional types (<code
+              class="bg-gray-200 px-1 rounded">?</code>)</b> - For variables
+          that have sensible defaults or are truly optional</li>
+      </ul>
+
+      <h2 id="contributing"
+        class="text-2xl font-bold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#contributing">Contributing</a>
+      </h2>
+
+      Contributions are welcome! Please feel free to submit a Pull Request.
+
+      <h2 id="license"
+        class="text-2xl font-bold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#license">License</a>
+      </h2>
+
+      MIT
+
+      <h2 id="changelog"
+        class="text-2xl font-bold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#changelog">Changelog</a>
+      </h2>
+
+      <h3 id="010"
+        class="text-xl font-semibold my-1 !text-gray-600 dark:!text-gray-100">
+        <a href="#010">0.1.0</a>
+      </h3>
+      <ul class="list-disc pl-5">
+        <li>Initial release</li>
+        <li>Support for all basic types (string, number, boolean, url, email,
+          enum, json, array, date)</li>
+        <li>Custom type validation with patterns</li>
+        <li>Automatic sensitive value masking</li>
+        <li>.env.example generation</li>
+        <li>Strict mode for unknown variables</li>
+      </ul>
+
+
+      <div
+        class="flex justify-between gap-2 bg-white text-black dark:bg-black dark:text-white rounded-md shadow-md p-3 fixed top-4 right-4 p-2 z-[40]">
+
+        <button id="openModal" class="block lg:hidden focus:outline-none"
+          type="button">
+          <i
+            class="bi bi-list text-black dark:text-white font-medium text-md text-center"></i>
+        </button>
+
+        <i id="theme-toggle" class="bi bi-sun text-xl"></i>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+          const toggleButton = document.getElementById("theme-toggle");
+
+          function updateIcon() {
+            if (document.documentElement.classList.contains("dark")) {
+              toggleButton.classList.remove("bi-moon");
+              toggleButton.classList.add("bi-sun");
+            } else {
+              toggleButton.classList.remove("bi-sun");
+              toggleButton.classList.add("bi-moon");
+            }
+          }
+          updateIcon();
+          toggleButton?.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+            const isDarkMode = document.documentElement.classList
+              .contains("dark");
+            localStorage.setItem("color-theme", isDarkMode ? "dark" :
+              "light");
+            updateIcon();
+          });
+
+
+          document.querySelector(".copy-btn")?.addEventListener("click",
+            function() {
+              const code = document.querySelector("pre code").innerText;
+              navigator.clipboard.writeText(code);
+              const copyBtn = document.getElementById("copyBtn");
+              copyBtn.classList.remove("bi-clipboard");
+              copyBtn.classList.add("bi-clipboard-check");
+            });
+        });
+      </script>
+      <p class="text-right text-black dark:text-white">Author: Osman Beyhan</p>
+      <div class="flex flex-wrap gap-3 mt-12">
+        <a href="https://github.com/osmn-byhn/envGuard" target="_blank"
+          class="flex gap-2 px-3 py-2 rounded-md bg-[#080808] text-white items-center justify-center whitespace-nowrap">
+          <i class="bi bi-github text-xl "></i>
+          <span class="text-xl">GitHub</span>
+        </a><a href="https://www.npmjs.com/package/@osmn-byhn/envguard"
+          target="_blank"
+          class="flex gap-2 px-3 py-2 rounded-md bg-[#cd3e3d] text-white items-center justify-center whitespace-nowrap">
+          <i class="fa-brands fa-npm text-xl "></i>
+          <span class="text-xl">NPM</span>
+        </a><a
+          href="https://yarnpkg.com/package?q=%40osmn-byhn%2Fenvguard&amp;name=%40osmn-byhn%2Fenvguard"
+          target="_blank"
+          class="flex gap-2 px-3 py-2 rounded-md bg-[#3c93bb] text-white items-center justify-center whitespace-nowrap">
+          <i class="fa-brands fa-yarn text-xl "></i>
+          <span class="text-xl">Yarn</span>
+        </a><a href="https://osmanbeyhan.com" target="_blank"
+          class="flex gap-2 px-3 py-2 rounded-md bg-[#000] text-white items-center justify-center whitespace-nowrap">
+          <i class="bi bi-globe-americas text-xl "></i>
+          <span class="text-xl">Web</span>
+        </a>
+      </div>
+      <div id="modal"
+        class="fixed inset-0 flex items-center justify-center bg-black/30 backdrop-blur hidden z-[50]">
+        <div
+          class="relative w-[calc(100%-2rem)] h-[calc(100%-2rem)] bg-white dark:bg-black rounded-lg shadow-lg p-6">
+          <button id="closeModal"
+            class="absolute top-4 right-4 text-4xl">×</button>
+          <h2 class="text-lg font-bold">EnvGuard</h2>
+
+          <div class="flex flex-wrap gap-3 mt-12">
+            <div class="relative">
+              <div class="absolute mt-1 rounded-md w-48">
+                <a id="-envguard-" href="#-envguard-"
+                  class="block p-2 font-bold">
+                  EnvGuard
+                </a><a id="-features-" href="#-features-"
+                  class="block p-2 font-bold">
+                  Features
+                </a><a id="-installation-" href="#-installation-"
+                  class="block p-2 font-bold">
+                  Installation
+                </a><a id="-quick-start-" href="#-quick-start-"
+                  class="block p-2 font-bold">
+                  Quick Start
+                </a><a id="-documentation-" href="#-documentation-"
+                  class="block p-2 font-bold">
+                  Documentation
+                </a><a id="-basic-usage-" href="#-basic-usage-"
+                  class="block p-2 font-bold">
+                  Basic Usage
+                </a><a id="-type-system-" href="#-type-system-"
+                  class="block p-2 font-bold">
+                  Type System
+                </a><a id="-1-string-type-" href="#-1-string-type-"
+                  class="block p-2 font-bold">
+                  1. String Type
+                </a><a id="-2-number-type-" href="#-2-number-type-"
+                  class="block p-2 font-bold">
+                  2. Number Type
+                </a><a id="-3-boolean-type-" href="#-3-boolean-type-"
+                  class="block p-2 font-bold">
+                  3. Boolean Type
+                </a><a id="-4-url-type-" href="#-4-url-type-"
+                  class="block p-2 font-bold">
+                  4. URL Type
+                </a><a id="-5-email-type-" href="#-5-email-type-"
+                  class="block p-2 font-bold">
+                  5. Email Type
+                </a><a id="-6-enum-type-" href="#-6-enum-type-"
+                  class="block p-2 font-bold">
+                  6. Enum Type
+                </a><a id="-7-json-type-" href="#-7-json-type-"
+                  class="block p-2 font-bold">
+                  7. JSON Type
+                </a><a id="-8-array-type-" href="#-8-array-type-"
+                  class="block p-2 font-bold">
+                  8. Array Type
+                </a><a id="-9-date-type-" href="#-9-date-type-"
+                  class="block p-2 font-bold">
+                  9. Date Type
+                </a><a id="-10-custom-type-" href="#-10-custom-type-"
+                  class="block p-2 font-bold">
+                  10. Custom Type
+                </a><a id="-options-" href="#-options-"
+                  class="block p-2 font-bold">
+                  Options
+                </a><a id="-options-reference-" href="#-options-reference-"
+                  class="block p-2 font-bold">
+                  Options Reference
+                </a><a id="-error-handling-" href="#-error-handling-"
+                  class="block p-2 font-bold">
+                  Error Handling
+                </a><a id="-security-features-" href="#-security-features-"
+                  class="block p-2 font-bold">
+                  Security Features
+                </a><a id="-generating-envexample-"
+                  href="#-generating-envexample-" class="block p-2 font-bold">
+                  Generating .env.example
+                </a><a id="-strict-mode-" href="#-strict-mode-"
+                  class="block p-2 font-bold">
+                  Strict Mode
+                </a><a id="-complete-example-" href="#-complete-example-"
+                  class="block p-2 font-bold">
+                  Complete Example
+                </a><a id="-typescript-support-" href="#-typescript-support-"
+                  class="block p-2 font-bold">
+                  TypeScript Support
+                </a><a id="-best-practices-" href="#-best-practices-"
+                  class="block p-2 font-bold">
+                  Best Practices
+                </a><a id="-contributing-" href="#-contributing-"
+                  class="block p-2 font-bold">
+                  Contributing
+                </a><a id="-license-" href="#-license-"
+                  class="block p-2 font-bold">
+                  License
+                </a><a id="-changelog-" href="#-changelog-"
+                  class="block p-2 font-bold">
+                  Changelog
+                </a><a id="-010-" href="#-010-" class="block p-2 font-bold">
+                  0.1.0
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <script>
+        const openModal = document.getElementById("openModal");
+        const closeModal = document.getElementById("closeModal");
+        const modal = document.getElementById("modal");
+
+        openModal.addEventListener("click", () => {
+          modal.classList.remove("hidden");
+        });
+
+        closeModal.addEventListener("click", () => {
+          modal.classList.add("hidden");
+        });
+      </script>
+    </div>
+  </div>
+  <hr class="mt-10">
+  <div class="my-5">
+    <p class="text-center">
+      <span class="">❤️ Make via</span>
+      <a href="https://www.mdtoweb.osmanbeyhan.com/"
+        class="text-blue-600">MDtoWeb</a>
+    </p>
+  </div>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js">
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js">
+  </script>
+
+
+
+</body>
+
+</html>
